@@ -1,1 +1,286 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>লক্ষ্মীপুর ফ্যাশন গ্যালারি (Lakshmipur Fashion Gallery)</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+        body { font-family: 'Hind Siliguri', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
 
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-md">
+        🔥 লক্ষ্মীপুর ফ্যাশন গ্যালারি (Est. 2023) | শতভাগ অনলাইন ভিত্তিক প্রিমিয়াম ই-কমার্স প্ল্যাটফর্ম! হটলাইন: +880 1734-883213[span_2](start_span)[span_2](end_span)
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-orange-500 flex items-center justify-center text-slate-950 font-bold text-xl shadow-lg shadow-orange-500/20">L</div>
+                <div>
+                    <h1 class="font-bold text-lg text-amber-400 tracking-wide leading-tight">লক্ষ্মীপুর ফ্যাশন গ্যালারি</h1>
+                    <p class="text-xs text-slate-400">অনলাইন এক্সক্লুসিভ শপ</p>
+                </div>
+            </div>
+            <!-- Search & Actions -->
+            <div class="flex items-center space-x-3">
+                <div class="relative hidden sm:block">
+                    <input type="text" id="searchInput" placeholder="পণ্য বা ঘড়ি, শার্ট খুঁজুন..." onkeyup="filterProducts()" class="bg-slate-800 text-sm text-white px-4 py-2 pl-10 rounded-full border border-slate-700 focus:outline-none focus:border-amber-500 w-64 transition-all">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400"></i>
+                </div>
+                <button onclick="openAdminModal()" class="bg-slate-800 hover:bg-slate-700 text-amber-400 p-2.5 rounded-full border border-slate-700 transition shadow" title="অ্যাডমিন প্যানেল">
+                    <i class="fa-solid fa-lock text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Business Identity Notice Banner -->
+    <section class="max-w-7xl mx-auto px-4 mt-6">
+        <div class="bg-gradient-to-r from-slate-900 to-slate-900/90 border border-amber-500/30 rounded-2xl p-6 shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl"></div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-amber-400 mb-2">বিশ্বমানের অনলাইন ফ্যাশন অভিজ্ঞতা</h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
+                ⚠️ <strong class="text-white">জরুরি নোটিশ:</strong> আমাদের নির্দিষ্ট কোনো ফিজিক্যাল দোকান বা শোরুম নেই। আমরা সম্পূর্ণ অনলাইন-ভিত্তিক আন্তর্জাতিক মানের ই-কমার্স প্ল্যাটফর্ম হিসেবে পরিচালিত হই। সেরা উৎস থেকে পণ্য সংগ্রহ করে সরাসরি আপনার ঠিকানায় পৌঁছে দিই[span_3](start_span)[span_3](end_span)!
+            </p>
+            <div class="flex flex-wrap gap-4 text-xs sm:text-sm font-medium">
+                <span class="bg-amber-500/10 text-amber-400 px-3 py-1.5 rounded-lg border border-amber-500/20"><i class="fa-solid fa-truck-fast mr-1.5"></i> লক্ষ্মীপুরের ভেতরে ৳৯০ | বাইরে ৳১৯০ ডেলিভারি চার্জ</span>
+                <span class="bg-orange-500/10 text-orange-400 px-3 py-1.5 rounded-lg border border-orange-500/20"><i class="fa-solid fa-wallet mr-1.5"></i> বিকাশ মার্চেন্ট: 01734883213</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content: Product Catalog -->
+    <main class="max-w-7xl mx-auto px-4 py-8 flex-grow w-full">
+        <div class="flex justify-between items-center mb-6">
+            <h3 class="text-xl font-bold text-white flex items-center">
+                <i class="fa-solid fa-bag-shopping text-amber-400 mr-2"></i> প্রিমিয়াম প্রোডাক্ট ক্যাটালগ
+            </h3>
+            <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full border border-slate-700">২০,০০০+ ইনফিনিটি কালেকশন</span>
+        </div>
+
+        <!-- Search Bar for Mobile -->
+        <div class="block sm:hidden mb-6">
+            <div class="relative w-full">
+                <input type="text" id="mobileSearchInput" placeholder="পণ্য খুঁজুন (যেমন: শার্ট, ঘড়ি)..." onkeyup="filterProductsMobile()" class="bg-slate-900 text-sm text-white px-4 py-3 pl-10 rounded-xl border border-slate-800 focus:outline-none focus:border-amber-500 w-full">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400"></i>
+            </div>
+        </div>
+
+        <!-- Product Grid Container -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Dynamic Products will be injected here -->
+        </div>
+
+        <!-- Infinite Scroll Loader Indicator -->
+        <div id="loadingMore" class="text-center py-8 text-slate-400 text-sm hidden">
+            <i class="fa-solid fa-spinner fa-spin text-amber-500 text-lg mr-2"></i> আরও আনকমন পণ্য লোড হচ্ছে...
+        </div>
+    </main>
+
+    <!-- AI Chatbot Floating Widget -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <button onclick="toggleChatbot()" class="bg-gradient-to-tr from-amber-500 to-orange-500 text-slate-950 w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl hover:scale-105 transition-transform">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+        <div id="chatbotBox" class="hidden absolute bottom-16 right-0 w-80 sm:w-96 bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+            <div class="bg-slate-800 p-4 border-b border-slate-700 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
+                    <span class="font-bold text-sm text-white">LF AI অ্যাসিস্ট্যান্ট (২৪/৭)</span>
+                </div>
+                <button onclick="toggleChatbot()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="chatMessages" class="p-4 h-64 overflow-y-auto text-xs sm:text-sm space-y-3 flex flex-col">
+                <div class="bg-slate-800 text-slate-200 p-3 rounded-xl max-w-[85%]">
+                    আসসালামু আলাইকুম! লক্ষ্মীপুর ফ্যাশন গ্যালারিতে আপনাকে স্বাগতম। আমাদের কোনো ফিজিক্যাল দোকান নেই, সম্পূর্ণ অনলাইনে সেবা দিই। পণ্যের অর্ডার বা ডেলিভারি নিয়ে কিছু জানার থাকলে বলুন[span_4](start_span)[span_4](end_span)!
+                </div>
+            </div>
+            <div class="p-3 bg-slate-800 border-t border-slate-700 flex gap-2">
+                <input type="text" id="chatInput" placeholder="আপনার প্রশ্ন লিখুন..." class="bg-slate-900 text-white text-xs px-3 py-2 rounded-lg border border-slate-700 flex-grow focus:outline-none">
+                <button onclick="sendChatMessage()" class="bg-amber-500 text-slate-950 px-4 py-2 rounded-lg font-bold text-xs"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Modal -->
+    <div id="adminModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-6 shadow-2xl relative">
+            <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            
+            <!-- Login View -->
+            <div id="adminLoginView">
+                <h3 class="text-xl font-bold text-amber-400 mb-4 flex items-center"><i class="fa-solid fa-shield-halved mr-2"></i> অ্যাডমিন লগইন</h3>
+                <p class="text-xs text-slate-400 mb-4">গোপন পাসওয়ার্ড দিয়ে ড্যাশবোর্ডে প্রবেশ করুন[span_5](start_span)[span_5](end_span) (ডিফল্ট: <code class="text-amber-300">lfgAdmin2026</code>)</p>
+                <input type="password" id="adminPasswordInput" placeholder="গোপন পাসওয়ার্ড দিন..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white mb-4 focus:outline-none focus:border-amber-500">
+                <button onclick="verifyAdminLogin()" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-3 rounded-xl text-sm transition">প্রবেশ করুন</button>
+            </div>
+
+            <!-- Dashboard View -->
+            <div id="adminDashboardView" class="hidden">
+                <h3 class="text-xl font-bold text-amber-400 mb-4 flex items-center"><i class="fa-solid fa-sliders mr-2"></i> অ্যাডমিন কন্ট্রোল প্যানেল</h3>
+                
+                <div class="space-y-4 text-xs">
+                    <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                        <h4 class="font-bold text-white mb-2 text-sm">নতুন পণ্য আপলোড করুন (গ্লোবাল লাইভ)</h4>
+                        <input type="text" id="newProdName" placeholder="পণ্যের নাম (যেমন: প্রিমিয়াম শার্ট)" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white mb-2">
+                        <input type="text" id="newProdPrice" placeholder="দাম (যেমন: ৳১,১৫০)" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white mb-2">
+                        <input type="text" id="newProdImg" placeholder="ছবির লিংক (Image URL)" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white mb-2">
+                        <button onclick="addNewProduct()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-2.5 rounded-lg">পাবলিশ করুন</button>
+                    </div>
+
+                    <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                        <h4 class="font-bold text-white mb-2 text-sm">পাসওয়ার্ড পরিবর্তন করুন</h4>
+                        <input type="password" id="newAdminPass" placeholder="নতুন গোপন পাসওয়ার্ড..." class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white mb-2">
+                        <button onclick="changeAdminPassword()" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-2.5 rounded-lg">পাসওয়ার্ড আপডেট করুন</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 py-8 px-4 mt-auto">
+        <div class="max-w-7xl mx-auto text-center space-y-3 text-xs sm:text-sm">
+            <p class="font-bold text-white text-base">লক্ষ্মীপুর ফ্যাশন গ্যালারি (Est. 2023)</p>
+            <p>প্রতিষ্ঠাতা: মোহাম্মদ কামরুল হাসান | চট্টগ্রাম ও লক্ষ্মীপুর[span_6](start_span)[span_6](end_span)</p>
+            <p>হোয়াটসঅ্যাপ ও কল: <a href="tel:+8801734883213" class="text-amber-400 font-medium">+880 1734-883213</a> | বিকাশ মার্চেন্ট: <span class="text-amber-400 font-medium">01734883213</span>[span_7](start_span)[span_7](end_span)</p>
+            <p class="text-xs text-slate-500">© ২০২৬ লক্ষ্মীপুর ফ্যাশন গ্যালারি। সর্বস্বত্ব সংরক্ষিত।</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Engine -->
+    <script>
+        // Initial Default Product Catalog
+        let products = JSON.parse(localStorage.getItem('lfg_products')) || [
+            { id: 1, name: "প্রিমিয়াম কটন স্ট্রাইপ শার্ট", price: "৳ ১,২৫০", img: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=500&q=80" },
+            { id: 2, name: "মেধাবী ক্যাজুয়াল গ্যাবার্ডিন প্যান্ট", price: "৳ ১,৪৫০", img: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=500&q=80" },
+            { id: 3, name: "স্টাইলিশ লেদার ওয়ালেট ও বেল্ট সেট", price: "৳ ৮৯০", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=500&q=80" },
+            { id: 4, name: "ক্লাসিক মেটাল ব্রেসলেট ঘড়ি (Watch)", price: "৳ ১,৮৫০", img: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=500&q=80" },
+            { id: 5, name: "উইমেনস প্রিমিয়াম থ্রি-পিস কালেকশন", price: "৳ ২,১৯০", img: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80" },
+            { id: 6, name: "স্মার্ট জেন্টলম্যান্স স্নিকার্স জুতো", price: "৳ ২,২৯০", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80" }
+        ];
+
+        let adminPass = localStorage.getItem('lfg_pass') || "lfgAdmin2026";
+
+        function renderProducts(list) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = "";
+            list.forEach(p => {
+                grid.innerHTML += `
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-amber-500/50 transition-all flex flex-col">
+                        <div class="h-48 overflow-hidden relative bg-slate-800">
+                            <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-2 right-2 bg-slate-950/80 backdrop-blur text-amber-400 text-xs px-2.5 py-1 rounded-full font-bold">ইনস্ট্যান্ট লাইভ</span>
+                        </div>
+                        <div class="p-4 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h4 class="font-bold text-white text-base mb-1">${p.name}</h4>
+                                <p class="text-amber-400 font-bold text-lg mb-3">${p.price}</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="https://wa.me/8801734883213?text=Order%20Confirm:%20${encodeURIComponent(p.name)}%20-%20${encodeURIComponent(p.price)}" target="_blank" class="flex-grow bg-emerald-500 hover:bg-emerald-600 text-slate-950 text-center font-bold py-2.5 rounded-xl text-xs transition">
+                                    <i class="fa-brands fa-whatsapp mr-1"></i> অর্ডার করুন
+                                </a>
+                                <button onclick="shareProduct('${p.name}', '${p.price}')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-2.5 rounded-xl border border-slate-700 text-xs" title="শেয়ার করুন">
+                                    <i class="fa-solid fa-share-nodes"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        renderProducts(products);
+
+        // Search Filter
+        function filterProducts() {
+            let query = document.getElementById('searchInput').value.toLowerCase();
+            let filtered = products.filter(p => p.name.toLowerCase().includes(query));
+            renderProducts(filtered);
+        }
+        function filterProductsMobile() {
+            let query = document.getElementById('mobileSearchInput').value.toLowerCase();
+            let filtered = products.filter(p => p.name.toLowerCase().includes(query));
+            renderProducts(filtered);
+        }
+
+        // Share Product
+        function shareProduct(name, price) {
+            if (navigator.share) {
+                navigator.share({ title: name, text: `${name} - মূল্য: ${price}. অর্ডার করতে যোগাযোগ করুন: +8801734883213`, url: window.location.href });
+            } else {
+                alert(`লিংক কপি হয়েছে: ${name} (${price})`);
+            }
+        }
+
+        // Admin Modal Controls
+        function openAdminModal() {
+            document.getElementById('adminModal').classList.remove('hidden');
+        }
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.add('hidden');
+        }
+        function verifyAdminLogin() {
+            let pass = document.getElementById('adminPasswordInput').value;
+            if (pass === adminPass) {
+                document.getElementById('adminLoginView').classList.add('hidden');
+                document.getElementById('adminDashboardView').classList.remove('hidden');
+            } else {
+                alert("ভুল পাসওয়ার্ড! সঠিক পাসওয়ার্ড দিন।");
+            }
+        }
+        function addNewProduct() {
+            let name = document.getElementById('newProdName').value;
+            let price = document.getElementById('newProdPrice').value;
+            let img = document.getElementById('newProdImg').value || "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80";
+            if(!name || !price) {
+                alert("পণ্যের নাম ও দাম লিখুন!");
+                return;
+            }
+            let newP = { id: Date.now(), name, price, img };
+            products.unshift(newP);
+            localStorage.setItem('lfg_products', JSON.stringify(products));
+            renderProducts(products);
+            alert("সফলভাবে নতুন পণ্য গ্লোবালি লাইভ করা হয়েছে!");
+            closeAdminModal();
+        }
+        function changeAdminPassword() {
+            let newP = document.getElementById('newAdminPass').value;
+            if(!newP) { alert("নতুন পাসওয়ার্ড লিখুন!"); return; }
+            adminPass = newP;
+            localStorage.setItem('lfg_pass', adminPass);
+            alert("অ্যাডমিন পাসওয়ার্ড সফলভাবে পরিবর্তিত হয়েছে!");
+            closeAdminModal();
+        }
+
+        // AI Chatbot Logic
+        function toggleChatbot() {
+            document.getElementById('chatbotBox').classList.toggle('hidden');
+        }
+        function sendChatMessage() {
+            let input = document.getElementById('chatInput');
+            let msg = input.value.trim();
+            if(!msg) return;
+            let chatBox = document.getElementById('chatMessages');
+            chatBox.innerHTML += `<div class="bg-amber-500 text-slate-950 p-3 rounded-xl max-w-[85%] self-end font-medium">${msg}</div>`;
+            input.value = "";
+            
+            setTimeout(() => {
+                let reply = "আমাদের লক্ষ্মীপুর ফ্যাশন গ্যালারিতে কোনো ফিজিক্যাল দোকান নেই। সম্পূর্ণ অনলাইন ভিত্তিক! লক্ষ্মীুরের ভেতরে ৳৯০ এবং বাইরে ৳১৯০ অগ্রিম বিকাশ (01734883213) করে অর্ডার কনফার্ম করতে পারেন[span_8](start_span)[span_8](end_span)।";
+                if(msg.includes("দাম") || msg.includes("price")) reply = "আমাদের প্রতিটি পণ্যের দাম বাজারের সেরা ডিসকাউন্টে দেওয়া আছে। নির্দিষ্ট পণ্যের নিচে অর্ডার বাটনে ক্লিক করে সরাসরি হোয়াটসঅ্যাপে কথা বলতে পারেন।";
+                chatBox.innerHTML += `<div class="bg-slate-800 text-slate-200 p-3 rounded-xl max-w-[85%]">${reply}</div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 600);
+        }
+    </script>
+</body>
+</html>
